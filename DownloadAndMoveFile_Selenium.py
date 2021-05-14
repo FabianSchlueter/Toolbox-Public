@@ -2,7 +2,7 @@
 """
 Created on Fri May 14 16:50:14 2021
 
-@author: Fabian
+@author: Fabian Schlueter
 """
 
 from selenium import webdriver
