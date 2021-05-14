@@ -1,0 +1,12 @@
+# Function dependencies, for example:
+# package==version
+pandas
+datetime
+numpy
+google-cloud-storage
+fsspec
+gcsfs
+google-cloud-bigquery
+pyarrow
+Flask==1.1.2
+google-cloud
