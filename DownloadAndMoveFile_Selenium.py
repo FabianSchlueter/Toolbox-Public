@@ -33,17 +33,20 @@ time.sleep(5)
 
 #%% Move downloaded file to another directory.
 
+def move_download(path_downloads, path_destination):
+    # Get all files in downloads
+    list_of_files = glob.glob(path_downloads) # * means all. if need specific format then *.csv
+    # Identify just downloaded file by picking the newest
+    latest_file = max(list_of_files, key=os.path.getctime)
+    print(latest_file)
+    
+    source = latest_file
+    destination = path_destination + r'\\' + os.path.basename(latest_file)
+    shutil.copy(source, destination)
+
 # Path where downloads are autmatically saved
 path_downloads = r'C:\Users\Fabian\Downloads\*'
 # Path to move the downloaded file to
 path_destination = r'C:\Users\Fabian\Desktop\\'
 
-# Get all files in downloads
-list_of_files = glob.glob(path_downloads) # * means all. if need specific format then *.csv
-# Identify just downloaded file by picking the newest
-latest_file = max(list_of_files, key=os.path.getctime)
-print(latest_file)
-
-source = latest_file
-destination = path_destination + r'\\' + os.path.basename(latest_file)
-shutil.copy(source, destination)
+move_download(path_downloads, path_destination)
